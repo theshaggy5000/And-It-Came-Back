@@ -144,3 +144,4 @@ Received Import Request.
 Start importing Assets/Audio/Music using Guid(dce2bc8fc4002b344b8b1babdbd76cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f778974303c21a555d18604b3cc18a93') in 0.001881 seconds
   Import took 0.004717 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
