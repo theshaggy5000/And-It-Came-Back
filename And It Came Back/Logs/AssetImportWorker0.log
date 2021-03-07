@@ -80,3 +80,38 @@ Received Import Request.
 Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cb0e2bd47a9ec78287b4816d309034a') in 0.011977 seconds
   Import took 0.015002 seconds .
 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.95 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 48.4 MB.
+System memory in use after: 48.6 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 3.274600 ms (FindLiveObjects: 0.232500 ms CreateObjectMapping: 0.070300 ms MarkObjects: 2.955500 ms  DeleteObjects: 0.015000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000918 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.888 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1781 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.3 MB.
+System memory in use after: 84.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2240.
+Total: 1.999400 ms (FindLiveObjects: 0.306300 ms CreateObjectMapping: 0.137000 ms MarkObjects: 1.524700 ms  DeleteObjects: 0.030300 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
