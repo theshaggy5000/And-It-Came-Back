@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         move();
+        faceMouse();
     }
 
     void move() {
@@ -21,5 +22,9 @@ public class CharacterMovement : MonoBehaviour
         newPos.x += speed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         newPos.y += speed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         transform.position = newPos;
+    }
+
+    void faceMouse() {
+        transform.LookAt(Input.mousePosition);
     }
 }
