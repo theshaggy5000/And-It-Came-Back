@@ -13,29 +13,13 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
+        move();
+    }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            pos.y += speed * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            pos.y -= speed * Time.deltaTime;
-        }     
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            pos.x += speed * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            pos.x -= speed * Time.deltaTime;
-        }
-
-        transform.position = pos;
-
+    void move() {
+        Vector3 newPos = transform.position;
+        newPos.x += speed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
+        newPos.y += speed * Time.deltaTime * Input.GetAxisRaw("Vertical");
+        transform.position = newPos;
     }
 }
