@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int bounceCount = 0;
+    public int maxBounces = 5;
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -16,7 +17,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "Walls")
         {
             bounceCount += 1;
-            if (bounceCount == 5)
+            if (bounceCount == maxBounces)
             {
                 Destroy(gameObject);
             }
