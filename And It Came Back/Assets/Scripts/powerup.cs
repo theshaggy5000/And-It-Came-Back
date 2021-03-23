@@ -8,6 +8,7 @@ public class powerup : MonoBehaviour
     public GameObject bulletPrefab;
 
     public PowerupType type;
+    public float tripleSpread = 30f;    //How much the triple spreads in degrees
 
     public void activate(GameObject bullet)
     {
@@ -18,7 +19,7 @@ public class powerup : MonoBehaviour
                 activateTriple(bullet);
                 break;
             case PowerupType.Auto:
-                //activate...
+                activateAuto(bullet);
                 break;
             case PowerupType.Bomb:
                 //activate...
@@ -48,17 +49,20 @@ public class powerup : MonoBehaviour
         //Create a new bullet angling out from the right side
         GameObject rightBullet = Instantiate(bulletPrefab);
         rightBullet.transform.position = bullet.transform.position + perpendicular;
-        rightBullet.GetComponent<Rigidbody2D>().AddForce(velocity, ForceMode2D.Impulse);
+        rightBullet.GetComponent<Rigidbody2D>().AddForce(
+            Quaternion.Euler(0f, 0f, tripleSpread) * velocity,
+            ForceMode2D.Impulse);
 
         //Repeat for the left side
         GameObject leftBullet = Instantiate(bulletPrefab);
         leftBullet.transform.position = bullet.transform.position - perpendicular;
-        leftBullet.GetComponent<Rigidbody2D>().AddForce(velocity, ForceMode2D.Impulse);
-
+        leftBullet.GetComponent<Rigidbody2D>().AddForce(
+            Quaternion.Euler(0f, 0f, -tripleSpread) * velocity,
+            ForceMode2D.Impulse);
     }
 
     private void activateAuto(GameObject bullet)
     {
-        
+        bullet.GetComponent<Rigidbody2D>().velocity *= 2f;
     }
 }
