@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     {
         // Event when a bullet hits the player.
         if (other.gameObject.tag == "Player")
-            Destroy(gameObject);
+        Destroy(gameObject);
 
         // Event when a bullet hits a wall.
         if (other.gameObject.tag == "Walls")
@@ -22,11 +22,5 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D other) {
-        // Event when a bullet hits a powerup
-        if (other.tag == "Powerup")
-            other.gameObject.GetComponent<powerup>().activate(this.gameObject);
     }
 }
