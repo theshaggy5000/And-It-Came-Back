@@ -14,9 +14,14 @@ public class BulletBehavior : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void changeSpeed(float speed)
+    public void setSpeed(float speed)
     {
         rb2d.velocity = rb2d.velocity.normalized * speed;
+    }
+
+    public void multSpeed(float speed)
+    {
+        rb2d.velocity *= speed;
     }
 
     void OnCollisionEnter2D(Collision2D other)

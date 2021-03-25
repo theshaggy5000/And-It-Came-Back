@@ -63,6 +63,6 @@ public class powerup : MonoBehaviour
 
     private void activateAuto(GameObject bullet)
     {
-        bullet.GetComponent<Rigidbody2D>().velocity *= 2f;
+        bullet.GetComponent<BulletBehavior>().multSpeed(2f);
     }
 }
