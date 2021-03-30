@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firingArm: {fileID: 3706967014005606819}
   cam: {fileID: 0}
-  moveSpeed: 5
+  moveSpeed: 8
 --- !u!114 &6053516014866169857
 MonoBehaviour:
   m_ObjectHideFlags: 0

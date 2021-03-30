@@ -24,6 +24,7 @@ public class PlayerScript : MonoBehaviour
         // Get axes position input.
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        movement.Normalize();
         
         // Get mouse input.
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -42,5 +43,12 @@ public class PlayerScript : MonoBehaviour
                 firingArm.transform.rotation,
                 Quaternion.AngleAxis(angle, Vector3.forward),
                 float.PositiveInfinity);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Event when a player collects a powerup
+        if (other.gameObject.tag == "Powerup")
+            other.GetComponent<powerup>().activate(this.gameObject);
     }
 }
