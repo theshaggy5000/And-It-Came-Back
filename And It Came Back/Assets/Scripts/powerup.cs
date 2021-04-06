@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    //The types that a powerup can be; NA is not applicable and should only be used outside of the powerup itself
+    //The types that a powerup can be; NA is 'not applicable' and should only be used outside of the powerup itself
     public enum PowerupType { Triple, Auto, Bomb, Laser, Shield, Life, NA }
     public GameObject bulletPrefab;
 
@@ -72,7 +72,7 @@ public class Powerup : MonoBehaviour
 
     private void activateAuto(GameObject obj)
     {
-        //Activate the powerup on a bullet
+        //Activate the powerup on a player
         if (obj.tag == "Player") {
 
         }
