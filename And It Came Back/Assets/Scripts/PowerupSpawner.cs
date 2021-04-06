@@ -5,7 +5,6 @@ using UnityEngine;
 public class PowerupSpawner : MonoBehaviour
 {
     public GameObject powerupPrefab;
-    public GameObject powerupContainer; //Container to place all of the powerups into
     public int spawnCooldown = 1000;    //Time (in frames) until the next powerup spawns
     private int timeUntilSpawn = 0;     //Time until the next powerup spawns
     private Transform[] locations;      //The transforms of each powerup spawner; index 0 is the powerup spawner controller
@@ -30,10 +29,13 @@ public class PowerupSpawner : MonoBehaviour
             bool spawned = false;
             while (!spawned && checks < numLocations) {
                 //If the location is free
-                if (/*locations[locIndex]*/ true) {
-                    //Spawn a random powerup at this location
-                    GameObject powerup = Instantiate(powerupPrefab, locations[locIndex].position, Quaternion.identity, powerupContainer.transform);
+                if (locations[locIndex].childCount == 0) {
+                    //Spawn a powerup at this location
+                    GameObject powerup = Instantiate(powerupPrefab, locations[locIndex].position, Quaternion.identity, locations[locIndex]);
+                    //Set the powerup to have a random type
                     powerup.GetComponent<Powerup>().type = (Powerup.PowerupType)Random.Range(0, (int)Powerup.PowerupType.NA);
+                    //Set the powerup's name for easy identifiability
+                    powerup.name = "powerup (" + powerup.GetComponent<Powerup>().type + ")";
                     spawned = true;
                 } else {
                     //Check the next location
