@@ -26,14 +26,9 @@ public class BulletBehavior : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        // Event when a bullet hits the player.
+        //// Event when a bullet hits the player.
         //if (other.gameObject.tag == "Player")
-        //{
-        //    Destroy(this.gameObject);
-        //    Destroy(other.gameObject);
-        //}
-
-
+        //    Destroy(gameObject);
 
         // Event when a bullet hits a wall and infinte bounces is turned off.
         if (!infiniteBounces && other.gameObject.tag == "Walls")
@@ -50,6 +45,6 @@ public class BulletBehavior : MonoBehaviour
     {
         // Event when a bullet hits a powerup
         if (other.gameObject.tag == "Powerup")
-            other.GetComponent<powerup>().activate(this.gameObject);
+            other.GetComponent<Powerup>().activate(this.gameObject);
     }
 }
