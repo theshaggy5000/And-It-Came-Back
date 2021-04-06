@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject firingArm;    //The firing arm of the player
     public Camera cam;              //The camera for the scene
     public float moveSpeed = 5f;    //How fast the player moves
-    public int health = 3;
+    public int health = 3;          //The health of the player
 
     Rigidbody2D rb2d;               //The rigidbody component of the player
     Vector2 movement;               //The direction the player is moving
@@ -52,13 +52,8 @@ public class PlayerScript : MonoBehaviour
             Destroy(other.gameObject);
             health--;
             if (health == 0)
-            {
                 Destroy(this.gameObject);
-                
-            }
         } 
-
     }
-
 
 }
