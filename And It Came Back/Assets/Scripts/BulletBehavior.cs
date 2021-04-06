@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    public bool infiniteBounces = true; //Whether the bullet should bounce infinitely or not
+    public bool infiniteBounces;        //Whether the bullet should bounce infinitely or not
     public int bounceCount = 0;         //The number of walls the bullet has bounced off of
     public int maxBounces = 5;          //The max number of bounces of a bullet
 
@@ -31,12 +31,12 @@ public class BulletBehavior : MonoBehaviour
         //    Destroy(gameObject);
 
         // Event when a bullet hits a wall and infinte bounces is turned off.
-        if (!infiniteBounces && other.gameObject.tag == "Walls")
+       if(other.gameObject.tag == "Walls")
         {
-            bounceCount += 1;
-            if (bounceCount == maxBounces)
+            bounceCount++;
+            if ((bounceCount >= maxBounces) && (infiniteBounces == false))
             {
-                Destroy(gameObject);
+                Destroy(this.gameObject);
             }
         }
     }

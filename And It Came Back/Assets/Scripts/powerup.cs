@@ -81,4 +81,7 @@ public class Powerup : MonoBehaviour
             obj.GetComponent<BulletBehavior>().multSpeed(2f);
         }
     }
+
+
+   
 }

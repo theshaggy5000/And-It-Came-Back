@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour
     {
         //Get the Rigidbody2D component from the script's gameobject
         rb2d = GetComponent<Rigidbody2D>();
+        Debug.Log("player health is " + health);
     }
 
     // Update is called once per frame
@@ -51,14 +52,19 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             health--;
+            Debug.Log("player health is " + health);
             if (health == 0)
             {
+                Debug.Log("player is dead");
                 Destroy(this.gameObject);
                 
             }
         } 
 
     }
+
+
+    
 
 
 }
