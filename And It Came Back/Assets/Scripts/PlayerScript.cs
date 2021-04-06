@@ -49,6 +49,6 @@ public class PlayerScript : MonoBehaviour
     {
         // Event when a player collects a powerup
         if (other.gameObject.tag == "Powerup")
-            other.GetComponent<powerup>().activate(this.gameObject);
+            other.GetComponent<Powerup>().activate(this.gameObject);
     }
 }

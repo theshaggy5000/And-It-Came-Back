@@ -45,6 +45,6 @@ public class BulletBehavior : MonoBehaviour
     {
         // Event when a bullet hits a powerup
         if (other.gameObject.tag == "Powerup")
-            other.GetComponent<powerup>().activate(this.gameObject);
+            other.GetComponent<Powerup>().activate(this.gameObject);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class powerup : MonoBehaviour
+public class Powerup : MonoBehaviour
 {
     //The types that a powerup can be; NA is not applicable and should only be used outside of the powerup itself
     public enum PowerupType { Triple, Auto, Bomb, Laser, Shield, Life, NA }
