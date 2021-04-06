@@ -26,9 +26,9 @@ public class BulletBehavior : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        // Event when a bullet hits the player.
-        if (other.gameObject.tag == "Player")
-            Destroy(gameObject);
+        //// Event when a bullet hits the player.
+        //if (other.gameObject.tag == "Player")
+        //    Destroy(gameObject);
 
         // Event when a bullet hits a wall and infinte bounces is turned off.
         if (!infiniteBounces && other.gameObject.tag == "Walls")
