@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public GameObject firingArm;    //The firing arm of the player
-    public Camera cam;              //The camera for the scene
-    public float moveSpeed = 5f;    //How fast the player moves
-    public int health = 3;          //The health of the player
+    public GameObject firingArm;        //The firing arm of the player
+    public Camera cam;                  //The camera for the scene
+    public float moveSpeed = 5f;        //How fast the player moves
+    public int health = 3;              //The health of the player
+    public Powerup.PowerupType ability
+        = Powerup.PowerupType.NA;       //The current ability the player has picked up
 
-    Rigidbody2D rb2d;               //The rigidbody component of the player
-    Vector2 movement;               //The direction the player is moving
-    Vector2 mousePos;               //The position of the mouse in the camera
+    Rigidbody2D rb2d;                   //The rigidbody component of the player
+    Vector2 movement;                   //The direction the player is moving
+    Vector2 mousePos;                   //The position of the mouse in the camera
 
     void Start()
     {
@@ -56,4 +58,11 @@ public class PlayerScript : MonoBehaviour
         } 
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Powerup") {
+            ability = other.GetComponent<Powerup>().type;
+            Destroy(other.gameObject);
+        }
+    }
 }
