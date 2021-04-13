@@ -6,7 +6,6 @@ public class PlayerHealth
 {
     private int health;
 
-
     public PlayerHealth(int health)
     {
         this.health = health;
