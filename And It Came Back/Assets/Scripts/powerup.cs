@@ -10,11 +10,12 @@ public class Powerup : MonoBehaviour
 
     public PowerupType type;
     public float tripleSpread = 30f;    //How much the triple spreads in degrees
-
+    public AudioSource glassBreak;
     //Activate the powerup on the given object
     public void activate(GameObject obj)
     {
         Debug.Log("Powerup hit (type=" + type.ToString() + ")");
+        glassBreak.Play();
         switch (type)
         {
             case PowerupType.Triple:
@@ -39,6 +40,7 @@ public class Powerup : MonoBehaviour
                 Debug.Log("Powerup type not handled/set");
                 break;
         }
+        
         Destroy(this.gameObject);
     }
 
@@ -50,6 +52,7 @@ public class Powerup : MonoBehaviour
         }
         //Activate the powerup on a bullet
         else {
+            
             //Find the vector perpendicular to the bullet's movement
             Vector3 velocity = obj.GetComponent<Rigidbody2D>().velocity;
             Vector3 perpendicular = Vector3.Cross(velocity, Vector3.back).normalized * .5f;
@@ -78,6 +81,7 @@ public class Powerup : MonoBehaviour
         }
         //Activate the powerup on a bullet
         else {
+          
             obj.GetComponent<BulletBehavior>().multSpeed(2f);
         }
     }

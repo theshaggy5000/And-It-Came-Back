@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public AudioSource westernGun;
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
@@ -13,6 +14,7 @@ public class Shooting : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
+            westernGun.Play();
             Shoot();
         }
     }
