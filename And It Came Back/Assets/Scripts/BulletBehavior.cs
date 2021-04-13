@@ -5,13 +5,14 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    public bool infiniteBounces;        //Whether the bullet should bounce infinitely or not
+    public bool infiniteBounces = false;        //Whether the bullet should bounce infinitely or not
     public int bounceCount = 0;         //The number of walls the bullet has bounced off of
     public int maxBounces = 5;          //The max number of bounces of a bullet
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        
     }
 
     public void setSpeed(float speed)

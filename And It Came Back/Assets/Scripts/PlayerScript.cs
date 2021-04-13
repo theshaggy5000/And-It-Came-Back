@@ -57,14 +57,7 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.Log("player is dead");
                 Destroy(this.gameObject);
-                
             }
         } 
-
     }
-
-
-    
-
-
 }
