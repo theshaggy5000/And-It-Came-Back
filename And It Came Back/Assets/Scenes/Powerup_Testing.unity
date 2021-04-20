@@ -447,7 +447,7 @@ PrefabInstance:
     - target: {fileID: 6053516014866169857, guid: 9246f228f334a5f43aa8b42c4610d556, type: 3}
       propertyPath: westernGun
       value: 
-      objectReference: {fileID: 1981442327}
+      objectReference: {fileID: 804995109}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9246f228f334a5f43aa8b42c4610d556, type: 3}
 --- !u!1001 &327435155
@@ -688,7 +688,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7d31ecb0751cbf242b923ac09723e7a0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -807,6 +807,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &804995109 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1780272937357481014, guid: 9246f228f334a5f43aa8b42c4610d556, type: 3}
+  m_PrefabInstance: {fileID: 195970836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &817170286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1194045741628302877, guid: b3e64b34dc49dd64094ba75b9e3af236, type: 3}
