@@ -23,8 +23,8 @@ public class PowerupSpawner : MonoBehaviour
         timeUntilSpawn++;
         //When it is time for a powerup to spawn
         if (timeUntilSpawn >= spawnCooldown) {
-            //Tries to spawn a powerup at a random powerup spawner
-            //in productions: If all locations already have powerups, doesn't spawn a powerup
+            //Tries to spawn a powerup at an empty random powerup spawner
+            //If all locations already have powerups, doesn't spawn a powerup
             int locIndex = Random.Range(1, numLocations), checks = 0;
             bool spawned = false;
             while (!spawned && checks < numLocations) {
